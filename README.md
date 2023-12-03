@@ -26,3 +26,6 @@ TODO
 
 ### Presentation Layer
 TODO
+
+## Key Concepts
+This project is intended to demonstrate proficiency with key concepts such as stream processing, web application development, relational database systems and security, and technical competency with the Microsoft ASP.NET stack. There are additional AI-centric core concepts demonstrated such as Linear Regression using production-grade prediction models. This is used to provide additional value thru inferencing techniques to the end user.
