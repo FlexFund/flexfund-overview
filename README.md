@@ -4,6 +4,7 @@ Welcome to FlexFund! FlexFund is a ground-breaking, intuitive software tool desi
 ## Architecture
 The FlexFund project is comprised of a multi-layer data fabric. The data fabric is based on a message-driven architecture in which data is ingested and fed into a message broker. Batch workflows are triggered nightly to perform analysis and inferencing:
 
+- Stream Simulation Layer (ASP.NET Core Application)
 - Data Ingestion Layer (.NET CLI Application)
 - Message Broker Layer (Apache Kafka)
 - Batch Processing Layer (Prefect/Python Application)
@@ -11,6 +12,9 @@ The FlexFund project is comprised of a multi-layer data fabric. The data fabric 
 - Presentation Layer (ASP.NET 8.0 Web API)
 
 The below excerpts describe, at a lower level, the implementation details of each logical architectural component.
+
+### Stream Simulation Layer
+This stream simulator is intended to be the application's primary producer which will take raw data sources and format them into a standardized and easily consumable/processable format downstream. In the case of this application, a combination of both simulated (fake) data was used as well as data from live sources. Each data source is tagged upon production to the Kafka stream. The producing logic is implemented in the form of hosted services that exist across the application.
 
 ### Data Ingestion Layer
 The data ingestion layer is a small microservice which will subscribe to messages from the Confluent stream data and ingest them into the SQL server database.
